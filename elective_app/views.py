@@ -8,3 +8,5 @@ dictionary = {
 def renderIndex(request):
     return render('','index.html',{"message":"Hello World"})
     
+def renderAbout(request):
+    return render(request,'about.html')
