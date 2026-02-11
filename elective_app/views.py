@@ -8,9 +8,3 @@ dictionary = {
 def renderIndex(request):
     return render('','index.html',{"message":"Hello World"})
     
-def GetInfo(request):
-    return JsonResponse(dictionary)
-
-#added yes
-def GetInfo2(request):
-    return JsonResponse(dictionary)
