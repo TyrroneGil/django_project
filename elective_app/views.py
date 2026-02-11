@@ -10,3 +10,7 @@ def renderIndex(request):
     
 def GetInfo(request):
     return JsonResponse(dictionary)
+
+#added yes
+def GetInfo2(request):
+    return JsonResponse(dictionary)
