@@ -1,33 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-        *{
-            margin:0;
-            padding:0;
-        }
-        body{
-            background-color: aquamarine;
-            display: flex;
-            align-items: center;
-            width: 100vw;
-            height: 100vh;
-            justify-content: center;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome to my website</h1>
-</body>
+    
+    <form action="addStudent" method="post">
+        {% csrf_token %}
+        <input type="text" name="fullname" id="">
+        <input type="text" name="course">
+        <input type="number" name="year">
+        <button type="submit">Submit</button>
+    </form>
+    {% for student in students %}
+    <p>{{student.fullname}} {{student.course}} {{student.year}}</p>
+    <a href="deleteStudent/{{student.id}}">Delete</a>
+    <a href="renderUpdate/{{student.id}}">Update</a>
+    {%endfor%}
 
-<script>
-    async function fetchSomething() {
-        const result = await fetch('http://192.168.109.71:8000/api/getInformation')
-        const response = await result.json();
-        console.log(response)
-    }
-</script>
+</body>
 </html>
